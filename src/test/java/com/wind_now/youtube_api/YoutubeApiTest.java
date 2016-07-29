@@ -46,16 +46,12 @@ public class YoutubeApiTest {
 
     @Test
     public void search() throws Exception {
-        logger.info("search");
         String term = "吹奏楽";
         Search search = new Search();
         SearchResponse res = search.search(term);
         String actual = res.getKind();
         String expected = "youtube#searchListResponse";
-        assertThat(actual, is(actual));
-        logger.info(res.getItems().get(0).getSnippet().getThumbnails().get_default().getUrl());
-        List<Item> items = res.getItems();
-        items.forEach(item -> logger.info(item.toString()));
+        assertThat(actual, is(expected));
     }
 
 }

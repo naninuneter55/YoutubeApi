@@ -54,7 +54,7 @@ public abstract class Builder {
                     .setPath(URL_PATH)
                     .setParameters(params)
                     .build();
-            System.out.println(uri);
+            logger.info("getUri() : {}", uri.toString());
         }catch(URISyntaxException e){
             logger.error(e.toString());
             uri = null;
